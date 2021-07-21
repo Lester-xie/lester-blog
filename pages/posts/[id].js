@@ -25,7 +25,7 @@ export default function Post({ postData }) {
   useEffect(() => {
     setTimeout(() => {
       window.Prism.highlightAll()
-      document.querySelectorAll('a').forEach(a => {
+      document.querySelectorAll('article a').forEach(a => {
         a.setAttribute('target', '_blank')
       })
     }, 1000)
