@@ -1,5 +1,5 @@
 .container {
-    max-width: 36rem;
+    max-width: 50vw;
     padding: 0 1rem;
     margin: 3rem auto 6rem;
 }
@@ -8,8 +8,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #a5ddff;
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.backToHome {
-    margin: 3rem 0 0;
+.header::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 35%;
+    height: 0;
+    border-top: 20px solid #a5ddff;
+    border-left: 20px solid transparent;
+}
+
+.backWrap {
+    display: inline-block;
+    margin: 40px 0;
+    font-size: 14px;
+    height: 30px;
+    overflow: hidden
+}
+.backWrap a {
+    display: inline-block;
+    outline: none;
+    padding: 1px 20px;
+    text-decoration: none;
+    border: 2px solid var(--main-blue);
+    font-weight: 500;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 30px;
+}
+.btnBack {
+    color: var(--main-blue);
+    border-color: var(--main-blue);
+}
+.btnBack:hover {
+    border-color: var(--main-blue);
+    color: var(--main-blue);
 }

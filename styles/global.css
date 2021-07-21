@@ -1,11 +1,17 @@
-html,
+h1, h2, h3,
+h4, h5, h6 {
+    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    color: #222;
+    margin: 1em 0;
+    font: 500 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+}
+
 body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    line-height: 1.6;
-    font-size: 18px;
+    background-color: #DEEDCF;
+    font: 400 1em/1.8 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+    color: #222;
 }
 
 * {
@@ -17,11 +23,78 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 img {
     max-width: 100%;
     display: block;
+}
+
+:root {
+    --main-blue: #039BE5;
+}
+
+h4 {
+    color: #74C67A;
+    position: relative;
+    font-weight: 500;
+}
+
+h4:before {
+    content: '';
+    border-left: 5px solid #74C67A;
+    position: absolute;
+    left: -15px;
+    height: 70%;
+    top: 15%;
+}
+
+h5 {
+    font-weight: 500;
+    color: #000;
+    position: relative;
+    font-size: 20px;
+}
+
+h6 {
+    font-weight: 500;
+    color: #000;
+    font-size: 18px;
+}
+
+article {
+    margin-top: 40px;
+}
+
+article h4 {
+    font-size: 1.4rem;
+}
+
+article a {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--main-blue);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    border-bottom: 2px solid transparent;
+    margin: 0 3px;
+}
+
+article a:hover {
+    border-bottom: 2px solid var(--main-blue);
+    -webkit-transition: all .2s ease;
+}
+
+article img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 0.6em 0;
+}
+
+blockquote {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 0 0 1.75em;
+    font-style: italic;
+    border-left: #0E4D64 5px solid;
+    color: #0E4D64;
 }

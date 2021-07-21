@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
-
+import {useEffect} from 'react'
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
@@ -23,6 +22,10 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ postData }) {
+  useEffect(() => {
+    window.Prism.highlightAll()
+  })
+
   return (
     <Layout>
       <Head>
@@ -30,9 +33,8 @@ export default function Post({ postData }) {
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
+        <div className={utilStyles.lightText}>{postData.date}</div>
+        <hr className={utilStyles.divider} />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>

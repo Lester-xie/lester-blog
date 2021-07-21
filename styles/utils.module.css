@@ -14,12 +14,6 @@
     margin: 1rem 0;
 }
 
-.headingLg {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin: 1rem 0;
-}
-
 .headingMd {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -27,6 +21,8 @@
 
 .borderCircle {
     border-radius: 9999px;
+    border: 3px solid white !important;
+    padding: 3px !important;
 }
 
 .colorInherit {
@@ -41,6 +37,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-top: 20px;
 }
 
 .listItem {
@@ -48,5 +45,43 @@
 }
 
 .lightText {
-    color: #666;
+    color: #003236;
+    text-align: right;
+}
+
+.postLink {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #003236;
+    border-bottom: 2px solid transparent;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.postLink:hover {
+    color: var(--main-blue);
+    border-bottom: 2px solid var(--main-blue);
+    -webkit-transition: all .2s ease;
+}
+
+.divider {
+    height: 0;
+    border: none;
+    border-bottom: 1px solid #a5ddff;
+    outline: none;
+    position: relative;
+    overflow: visible;
+    margin: 30px 0;
+}
+
+.divider::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 35%;
+    height: 0;
+    border-top: 20px solid #a5ddff;
+    border-left: 20px solid transparent;
+    z-index: 100;
 }

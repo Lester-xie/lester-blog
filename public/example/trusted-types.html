@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>trusted-types</title>
+  <meta http-equiv="Content-Security-Policy" content="trusted-types unsafe escape; require-trusted-types-for 'script'">
+</head>
+<body>
+<p>打开控制台可以看到报错</p>
+<script>
+  document.body.innerHTML = 'throws error'
+</script>
+</body>
+</html>
