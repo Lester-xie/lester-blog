@@ -7,7 +7,7 @@ date:   '2021-06-07'
 
 ##### 给页面指定文档模型，避免引发怪异模式
 
-这算是一个针对于IE怪异模式的hack，但现在微软都已经宣布放弃IE系列了，咱也就不再考古[怪异模式](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_quirks_mode_behavior){:target="_blank"}了，但还是需要在HTML页面的第一行加上
+这算是一个针对于IE怪异模式的hack，但现在微软都已经宣布放弃IE系列了，咱也就不再考古[怪异模式](https://developer.mozilla.org/en-US/docs/Mozilla/Mozilla_quirks_mode_behavior)了，但还是需要在HTML页面的第一行加上
 <pre class="language-html"><code>
 &lt;!DOCTYPE html&gt;
     </code></pre>
@@ -32,7 +32,7 @@ date:   '2021-06-07'
 #### 让页面更快
 
 ##### 使用HTTP2
-这里之前写过一篇博文体验[HTTP2](https://lester-xie.github.io/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/2017/10/24/HTTP2.html){:target="_blank"}，这里就不再举例它的优点了。
+这里之前写过一篇博文体验[HTTP2](https://lester-xie.github.io/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/2017/10/24/HTTP2.html)，这里就不再举例它的优点了。
 
 ##### 避免使用 document.write()
 解析HTML构建DOM树时，如果遇到脚本，就必须去加载它后才能继续解析HTML，如果一个`document.write()`又动态注入了另一个脚本，那么解析器将被迫等待更长的时间，这对于网络不好的用户，将会明显加大页面首次打开的时间。
@@ -54,7 +54,7 @@ addEventListener(document, "touchstart", function () {
 #### 让页面更安全
 
 ##### 使用HTTPS
-HTTPS可以有效防止非法用户利用网站的漏洞来进行恶意破坏，最简单有效的部署HTTPS，就是把你的网站托管在CDN上，如果需要在自己的服务器上部署，可以参考[这篇文章](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https){:target="_blank"}
+HTTPS可以有效防止非法用户利用网站的漏洞来进行恶意破坏，最简单有效的部署HTTPS，就是把你的网站托管在CDN上，如果需要在自己的服务器上部署，可以参考[这篇文章](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)
 
 ##### 访问不安全的跨源链接
 我们通常使用`target="_blank"`打开一个新的页面，但这样做可能会给网站带来一些安全隐患：
@@ -63,7 +63,7 @@ HTTPS可以有效防止非法用户利用网站的漏洞来进行恶意破坏，
 
 为了避免发生以上两种意外，我们可以给a标签设置属性`rel="noopener"`或`rel="noreferrer"`，这样可以让打开的页面在新的进程里运行，同时新页面不再可以访问`window.opener`
 
-Chrome在67版本后默认开启了站点隔离，但为了兼容老版本浏览器，最好还是加上稳妥点。但是站点隔离后也会造成一些微妙的副作用，可以查看这一篇[文章](https://developers.google.com/web/updates/2018/07/site-isolation){:target="_blank"}
+Chrome在67版本后默认开启了站点隔离，但为了兼容老版本浏览器，最好还是加上稳妥点。但是站点隔离后也会造成一些微妙的副作用，可以查看这一篇[文章](https://developers.google.com/web/updates/2018/07/site-isolation)
 
 ##### 确保页面的CSP对XSS攻击有效
 设置页面的CSP，避免XSS攻击，之前写过一篇[如何避免基于DOM的XSS攻击](https://lester-xie.github.io/javascript/2021/03/01/dom-xss.html)
@@ -86,6 +86,6 @@ Chrome在67版本后默认开启了站点隔离，但为了兼容老版本浏览
 * 在用户选择加入通知类型后显示权限请求
 
 #### 总结
-[google develop](https://web.dev/lighthouse-best-practices/){:target="_blank"}官网上给了以上的最佳实践建议，目的其实是为了推广他们出品的网页审查工具[lighthouse](https://developers.google.com/web/tools/lighthouse/){:target="_blank"}，
+[google develop](https://web.dev/lighthouse-best-practices/)官网上给了以上的最佳实践建议，目的其实是为了推广他们出品的网页审查工具[lighthouse](https://developers.google.com/web/tools/lighthouse/){:target="_blank"}，
 该工具可以帮你的网站做体检，找出网页漏洞和优化建议，并且完全开源。
 
