@@ -24,6 +24,8 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="stylesheet" href="/css/prism.css" />
+        <script src="/js/prism.min.js" />
       </Head>
       {home && (
         <header className={styles.header}>

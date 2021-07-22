@@ -23,20 +23,16 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
   useEffect(() => {
-    setTimeout(() => {
-      window.Prism.highlightAll()
-      document.querySelectorAll('article a').forEach(a => {
-        a.setAttribute('target', '_blank')
-      })
-    }, 1000)
+    window.Prism.highlightAll()
+    document.querySelectorAll('article a').forEach(a => {
+      a.setAttribute('target', '_blank')
+    })
   })
 
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
-        <link rel="stylesheet" href="/css/prism.css" />
-        <script src="/js/prism.min.js" />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
